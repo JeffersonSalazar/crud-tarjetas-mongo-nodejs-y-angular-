@@ -1,0 +1,104 @@
+/* 
+    el orden definido para los estilos, 
+    es igual a como esta estructurado html
+    si no encuentras un etiqueta quizas no hubo
+    la necesidad de de darle estilos o esta en el
+    archivo principal styles.scss 
+*/
+
+/*
+    importacion de varaibales y mixin para reutilizar
+    el codigo en los diferentes componentes
+    (ruta del archivo front/src/app/shared)...
+*/
+@import '_variables.scss';
+@import '_mixin.scss';
+
+/*
+    al content_data aplicamos flexbox para darle un mejor manejo
+    a las tarjetas generadas, tambien definimos que superado 
+    su contenedor de 418px de ancho estas colapsen creando una nueva
+    fila.
+    de la linea 33/39 definimos 2 querys pertenecientes a content_data
+    donde cambiamos el ancho del contenedor con el fin de
+    ajustar la cantidad de targetas que este puede contener 
+*/
+.content_card {
+
+    .content_data {
+        display: flex;
+        flex-wrap: wrap;
+        width: 418px;
+        margin: 0 auto;
+        
+        @media (min-width: 720px) { // query de 720 hasta 1019
+            width: 627px;
+        }
+
+        @media (min-width: 1020px) { // query de 1020 en adelante
+            width: 1016px;
+        }
+
+        /*
+            en la linea 53/55 definimos un query para
+            card_target para definir el ancho de las targetas
+            para la vista full scream
+        */
+        .card_target {
+            text-align: center;
+            border: 1px solid $colorBorde;
+            border-radius: 10px;
+            width: 185px;
+            height: 400px;
+            margin: 20px 12px;
+            box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+
+            @media (min-width: 1020px) { // query de 1020 en adelante
+                width: 230px;
+            }
+
+            span {
+                display: block;
+                text-align: left;
+                font-size: 26px;
+                font-weight: 800;
+                color: $colorNumero;
+                padding: 10px 20px;
+            }
+
+            img {
+                display: block;
+                width: 90%;
+                margin: 0 auto;
+                cursor: pointer;
+            }
+
+            h4 {
+                margin-top: 12px;
+                letter-spacing: 1.2px;
+            }
+
+            h6 {
+                letter-spacing: 1.4px;
+                color: $colorBorde;
+            }
+
+            .content_btn {
+
+                button {
+                    @include btnMix;
+                    width: 90px;
+                    margin: 10px 6px 0;
+                    
+                    &.delete {
+                        background: $colorDelete;
+                    }
+
+                    &.edit {
+                        background: $colorEdit;
+                    }
+                }
+            }
+        } 
+    }
+}

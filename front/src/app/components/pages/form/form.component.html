@@ -1,0 +1,55 @@
+<!-- 
+    de la linea 5/9 definimos un enlace que nos
+    redirige a la tabla de la app, de la linea
+-->
+<section class="content_banner">
+    <div class="content_form">
+        <ul>
+            <li><a [routerLink]="['/tablePet']">Regresar a la tabla</a></li>
+        </ul>
+
+        <!--
+            de la linea 20/36 definimos el formulario este se trabajo con ngModel,
+            el metodo de subida ejecuta dos acciones dependiendo de la solicitud del
+            usuario. en la linea 21/25 definimos una validacion de campos vacios
+            cada input tiene su requerimiento para su validacion...
+            en la linea 38/42 tenemos el contenedor de los iconos, en la linea
+            44 definimos un div para generar espaciado entre el form y el footer 
+            que esta en la linea 46
+        -->
+        <form novalidate autocomplete="off" (ngSubmit)="saveUpdate()">
+            <section class="content_error" *ngIf="fieldsRequire">
+                <div *ngIf="nombre.errors?.required || raza.errors?.required">    
+                    <span class="text-white">Todos los campos son obligatorios</span>
+                </div>
+            </section>
+
+            <div class="input-group flex-nowrap">
+                <input type="text" name="nombre" placeholder="Nombre" required [(ngModel)]="formPet.nombre" #nombre="ngModel">
+            </div>
+            
+            <div class="input-group flex-nowrap">
+                <input type="text" name="raza" placeholder="Raza" required [(ngModel)]="formPet.raza" #raza="ngModel">
+            </div>
+           
+            <button type="submit">{{ btnTitle }}</button>
+        </form>
+
+        <section class="conten_icons">
+            <i class="fa fa-github"></i>
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-linkedin"></i>
+        </section>
+
+        <div class="content_space"></div> <!-- contenedor para espaciado -->
+
+        <footer>Design by Jefferson Salazar</footer>
+    </div>
+
+    <!-- 
+        en la linea 54 definimos un contenedor para colocar la 
+        img de fondo en el FormComponent y crear el diseño final
+        con el uso de flexbox
+    -->
+    <div class="content_portada"></div>
+</section>

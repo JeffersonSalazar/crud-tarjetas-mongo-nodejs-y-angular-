@@ -1,0 +1,138 @@
+/* 
+    el orden definido para los estilos, 
+    es igual a como esta estructurado html
+    si no encuentras un etiqueta quizas no hubo
+    la necesidad de de darle estilos o esta en el
+    archivo principal styles.scss 
+*/
+
+/*
+    importacion de varaibales y mixin para reutilizar
+    el codigo en los diferentes componentes
+    (ruta del archivo front/src/app/shared)...
+*/
+@import '_variables.scss';
+@import '_mixin.scss';
+
+/*
+   en content_banner definimos un query de 1012px en 
+   adelante en el cual hacemos uso de flexbox para el diseño
+*/
+.content_banner {
+
+    @media (min-width: 1012px) {
+        display: flex;
+        height: 100vh;
+    }
+
+    /*
+        en content_form definimos un query de 1012px
+        en adelante para ajustar su ancho de pantalla
+    */
+    .content_form {
+        
+        @media (min-width: 1012px) {
+            width: 600px;
+        }
+        
+        form {
+            width: 340px;
+            padding: 20px 30px;
+            margin: 60px auto;
+
+            .content_error { // estilos definidos para los errores de validacion
+                margin: 0 auto;
+                text-align: center;
+                background-color: $colorError;
+                box-shadow: 0 2px 6px 0 $colorBorde;
+            }
+
+            input {
+                border: none;
+                border-bottom: 1px solid $colorBorde;
+                outline: none;
+                letter-spacing: 1px;
+                width: 100%;
+                height: 36px;
+                padding: 0 10px 0;
+                margin: 12px 0;
+                transition: all .2s ease-in-out;
+
+                &:focus {
+                    border-bottom: 1px solid $colorNumero;
+                    box-shadow: 0px 15px 20px -15px $colorSombra;
+                }
+            }
+
+            button {
+                @include btnMix;
+                background: $colorAdd;
+                width: 100%;
+                margin-top: 16px;
+
+                &:hover {
+                    background: $colorHoverAdd;
+                }
+            }
+        }
+
+        .conten_icons {
+            text-align: center;
+            
+            i {
+                color: white;
+                margin: 0 10px;
+                padding: 12px;
+                border: 1px solid transparent;
+                border-radius: 100px;
+                box-shadow: 0 3px 10px rgb(68, 66, 66);
+                cursor: pointer;
+                
+                &.fa-github {
+                    background-color: $fondoGit;
+                }
+                
+                &.fa-envelope {
+                    background-color: $fondoEmail;
+                }
+                
+                &.fa-linkedin {
+                    background-color: $fondoLinkedin
+                }
+            }
+        }
+
+        .content_space {
+            width: 100%;
+            height: 40px;
+        }
+
+        footer {
+            text-align: center;
+            color: #ccc;
+        }
+    }
+
+    /*
+        este contenedor lo utilizamos para añadir una imagen de fondo 
+        ademas, definimos un query de 1012 en adelante donde 
+        creamos con pseudo clases una capa de color para esta....
+    */
+    .content_portada {
+        width: 100%;
+        background-image: url(../../../../assets/img/pets.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (min-width: 1012px) { 
+            &:before {
+                content:'';
+                width: 100%;
+                height: 100%;
+                display: block;
+                background-color: rgba(0,0,0,0.3);
+            }
+        }
+    }
+}

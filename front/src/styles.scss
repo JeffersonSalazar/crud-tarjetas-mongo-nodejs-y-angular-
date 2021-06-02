@@ -1,0 +1,56 @@
+/* 
+    el orden definido para los estilos, 
+    es igual a como esta estructurado el proyecto
+    en este archivo damos estilos a las tag
+    que tienen similitud en su estructura
+    si no encuentras un etiqueta aqui busca 
+    en su propia hoja de estilos...
+*/
+
+/*
+    importacion de varaibales para reutilizar
+    el codigo en los diferentes componentes
+    (ruta del archivo front/src/app/shared)...
+*/
+@import '_variables.scss';
+
+/*
+    de la linea 21/25 formatiamos los espaciados
+    generados por los navegadores... 
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    de la linea 31/33 formatiamos los espaciados
+    que traen por defecto las siguientes etiquetas... 
+*/
+h1, h2, h3, h4, h5, h6, p, ul, li, a {
+    margin-bottom: 0 !important;
+}
+
+/*
+    de la liena 39/56 tenemos los estilos del menu
+    de navegacion definidos dentro de table y form component
+ */
+ul {
+    list-style: none;
+    text-align: end;
+    padding: 10px 30px;
+
+    li {
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: $colorBorde;
+
+            &:hover {
+                color: $colorhover;
+            }
+        }
+    }
+}

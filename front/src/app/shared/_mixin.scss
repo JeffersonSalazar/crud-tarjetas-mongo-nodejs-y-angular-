@@ -1,0 +1,13 @@
+/*
+    en este mixin definimos estilos generales para todos
+    los botones, lo empleamos en TableComponent y
+    FormComponent
+*/
+@mixin btnMix {
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 5px;    
+    letter-spacing: 1.1px;
+    color: $colorText;
+}

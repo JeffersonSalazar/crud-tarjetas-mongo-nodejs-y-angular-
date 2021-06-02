@@ -1,0 +1,33 @@
+<!-- 
+    de la linea 5/7 definimos un enlace que nos
+    redirige al formulario de la app
+-->
+<ul>
+    <li><a [routerLink]="['/formPet']">Ir al formulario</a></li>
+</ul>
+ 
+<!-- 
+    de la linea 15/18 definimos un ng-template que nos muestra 
+    informacion si no hay elementos en la tabla, de la linea 20/33
+    esta el contenedor de las tarjetas donde empelamos el ngFor,
+    en la linea 27/30 los botones que ejecutan los metodos eliminar y editar...
+-->
+<div class="content_card">
+    <ng-template #noRegistros>
+        <h2 class="text-center mt-3">No Existen Targetas Registradas</h2>
+    </ng-template>
+
+    <section class="content_data" *ngIf="pets.length > 0, else noRegistros">
+        <div class="card_target" *ngFor="let item of pets, index as i">
+            <span class="pos_color">{{ i + 1 }}.</span>
+            <img src="../../../../assets/img/dog4.png" alt="">
+            <h4>{{ item.nombre }}</h4>
+            <h6>{{ item.raza }}</h6>
+
+            <section class="content_btn">
+                <button type="button" class="delete" (click)="delete(item)">Eliminar</button>
+                <button type="button" class="edit" [routerLink]="['/editPet', item._id]">Editar</button>
+            </section>
+        </div>
+    </section>
+</div>

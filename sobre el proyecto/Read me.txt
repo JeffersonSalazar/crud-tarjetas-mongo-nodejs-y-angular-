@@ -1,0 +1,54 @@
+TECNOLOGIAS
+node js - angular y mongo db...
+
+
+CODIGO
+
+para la parte del back con node js utilzamos express para la creacion del servidor
+y un modulo de mongo db llamado mongoose para la conexion
+entre el back y la base de datos ademas utilizamos variables de entorno
+para la proteccion de las credenciales de conexion.
+
+definimos 4 archivos js donde definimos el codigo para la conexion a la base de datos, 
+la estructura de la base de datos, los metodos (get, post, delete, put) y el servidor
+
+en la parte del front con angular, creamos un modulo y un enrutamiento personalizado
+para los componentes de la aplicacion, tambien un modelo de datos y un servicio para 
+crear los metodos de conexion atravez del modulo http.
+tambien tenemos una carpeta llamada shared donde creamos estilos reutilizables para estos 
+componentes
+
+por ultimo dejamos saber tambien el uso de ngModel, validaciones, el uso de
+router y activatedRoute, reutilizacion de componentes etc
+
+
+WEB
+
+en este crud podemos crear targetas de mascotas a travez de un formulario,
+tenemos en la aplicacion 2 enlaces de navegacion los cuales se encargan de
+redirigirnos a la tabla o al formulario de la misma.
+
+en la parte del formulario encontramos 2 campos para ingresar el nombre 
+y la raza de la mascota a los cuales añadimos una validacion que informa
+al usuario que los campos son requeridos lo que impide almacenar en la base de datos
+informacion vacia.
+
+una vez creada la targeta satisfactoriamente veremos en esta los datos
+ingresados por el usuario donde en el diseño para full scream vemos que
+despues de la cuarta targeta la quinta se ubica debajo de las anteriores
+creando una nueva fila..
+
+para el diseño en dispositivos moviles crea una nueva fila apartir de la
+tercer targeta y en el tamaño mas pequeño despues de la segunda targeta...
+
+en la vista del formulario para pantalla full scream vemos un diseño
+del formulario con una imagen, para la vista de dispositivos moviles 
+esta imagen es removida
+
+en las targetas encontramos un boton para eliminar y otro para editar
+utilizando la opcion de editar vemos como nos redirige al formulario
+y añade en los campos de este la informaciona a editar y cambia la accion del
+formulario de guardar a actualizar
+
+por ultimo vemos como podemos eliminar una targeta tanto de la aplicacion como
+de la base de datos
