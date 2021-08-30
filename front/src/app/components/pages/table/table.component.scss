@@ -11,8 +11,8 @@
     el codigo en los diferentes componentes
     (ruta del archivo front/src/app/shared)...
 */
-@import '_variables.scss';
-@import '_mixin.scss';
+@import '../../../shared/variables';
+@import '../../../shared/mixin';
 
 /*
     al content_data aplicamos flexbox para darle un mejor manejo
@@ -28,15 +28,14 @@
     .content_data {
         display: flex;
         flex-wrap: wrap;
-        width: 418px;
-        margin: 0 auto;
+        justify-content: space-evenly;
         
         @media (min-width: 720px) { // query de 720 hasta 1019
-            width: 627px;
+            // width: 627px;
         }
 
         @media (min-width: 1020px) { // query de 1020 en adelante
-            width: 1016px;
+            // width: 1016px;
         }
 
         /*
@@ -50,7 +49,7 @@
             border-radius: 10px;
             width: 185px;
             height: 400px;
-            margin: 20px 12px;
+            margin: 20px 0;
             box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
 
             @media (min-width: 1020px) { // query de 1020 en adelante

@@ -12,7 +12,7 @@
     el codigo en los diferentes componentes
     (ruta del archivo front/src/app/shared)...
 */
-@import '_variables.scss';
+@import './app/shared/variables';
 
 /*
     de la linea 21/25 formatiamos los espaciados
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li, a {
 ul {
     list-style: none;
     text-align: end;
-    padding: 10px 30px;
+    padding: 10px 20px;
 
     li {
 

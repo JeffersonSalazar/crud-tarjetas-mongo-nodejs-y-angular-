@@ -1,0 +1,106 @@
+/* 
+    el orden definido para los estilos, 
+    es igual a como esta estructurado html
+    si no encuentras un etiqueta quizas no hubo
+    la necesidad de de darle estilos o esta en el
+    archivo principal styles.scss 
+*/
+/*
+    importacion de varaibales y mixin para reutilizar
+    el codigo en los diferentes componentes
+    (ruta del archivo front/src/app/shared)...
+*/
+/*
+    en este mixin definimos estilos generales para todos
+    los botones, lo empleamos en TableComponent y
+    FormComponent
+*/
+/*
+    al content_data aplicamos flexbox para darle un mejor manejo
+    a las tarjetas generadas, tambien definimos que superado 
+    su contenedor de 418px de ancho estas colapsen creando una nueva
+    fila.
+    de la linea 33/39 definimos 2 querys pertenecientes a content_data
+    donde cambiamos el ancho del contenedor con el fin de
+    ajustar la cantidad de targetas que este puede contener 
+*/
+.content_card .content_data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  /*
+            en la linea 53/55 definimos un query para
+            card_target para definir el ancho de las targetas
+            para la vista full scream
+        */
+}
+
+.content_card .content_data .card_target {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 185px;
+  height: 400px;
+  margin: 20px 0;
+  -webkit-box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 1020px) {
+  .content_card .content_data .card_target {
+    width: 230px;
+  }
+}
+
+.content_card .content_data .card_target span {
+  display: block;
+  text-align: left;
+  font-size: 26px;
+  font-weight: 800;
+  color: #637bff;
+  padding: 10px 20px;
+}
+
+.content_card .content_data .card_target img {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.content_card .content_data .card_target h4 {
+  margin-top: 12px;
+  letter-spacing: 1.2px;
+}
+
+.content_card .content_data .card_target h6 {
+  letter-spacing: 1.4px;
+  color: #ccc;
+}
+
+.content_card .content_data .card_target .content_btn button {
+  outline: none;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  letter-spacing: 1.1px;
+  color: #fff;
+  width: 90px;
+  margin: 10px 6px 0;
+}
+
+.content_card .content_data .card_target .content_btn button.delete {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8f63), to(#f62121));
+  background: linear-gradient(180deg, #ff8f63, #f62121);
+}
+
+.content_card .content_data .card_target .content_btn button.edit {
+  background: -webkit-gradient(linear, left top, left bottom, from(#21c8f6), to(#637bff));
+  background: linear-gradient(180deg, #21c8f6, #637bff);
+}
+/*# sourceMappingURL=table.component.css.map */

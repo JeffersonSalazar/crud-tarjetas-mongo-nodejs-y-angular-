@@ -20,7 +20,7 @@
     <section class="content_data" *ngIf="pets.length > 0, else noRegistros">
         <div class="card_target" *ngFor="let item of pets, index as i">
             <span class="pos_color">{{ i + 1 }}.</span>
-            <img src="../../../../assets/img/dog4.png" alt="">
+            <img src="../../../../assets/img/dog4.png" alt="dog">
             <h4>{{ item.nombre }}</h4>
             <h6>{{ item.raza }}</h6>
 

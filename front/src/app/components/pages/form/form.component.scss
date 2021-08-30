@@ -11,8 +11,8 @@
     el codigo en los diferentes componentes
     (ruta del archivo front/src/app/shared)...
 */
-@import '_variables.scss';
-@import '_mixin.scss';
+@import '../../../shared/variables';
+@import '../../../shared/mixin';
 
 /*
    en content_banner definimos un query de 1012px en 
@@ -36,9 +36,7 @@
         }
         
         form {
-            width: 340px;
-            padding: 20px 30px;
-            margin: 60px auto;
+            margin: 60px 20px;
 
             .content_error { // estilos definidos para los errores de validacion
                 margin: 0 auto;
@@ -68,7 +66,7 @@
                 @include btnMix;
                 background: $colorAdd;
                 width: 100%;
-                margin-top: 16px;
+                margin-top: 36px;
 
                 &:hover {
                     background: $colorHoverAdd;

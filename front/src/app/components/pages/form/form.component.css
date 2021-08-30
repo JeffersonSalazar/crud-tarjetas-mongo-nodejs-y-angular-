@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/* 
+    el orden definido para los estilos, 
+    es igual a como esta estructurado html
+    si no encuentras un etiqueta quizas no hubo
+    la necesidad de de darle estilos o esta en el
+    archivo principal styles.scss 
+*/
+/*
+    importacion de varaibales y mixin para reutilizar
+    el codigo en los diferentes componentes
+    (ruta del archivo front/src/app/shared)...
+*/
+/*
+    en este mixin definimos estilos generales para todos
+    los botones, lo empleamos en TableComponent y
+    FormComponent
+*/
+/*
+   en content_banner definimos un query de 1012px en 
+   adelante en el cual hacemos uso de flexbox para el diseño
+*/
+.content_banner {
+  /*
+        en content_form definimos un query de 1012px
+        en adelante para ajustar su ancho de pantalla
+    */
+  /*
+        este contenedor lo utilizamos para añadir una imagen de fondo 
+        ademas, definimos un query de 1012 en adelante donde 
+        creamos con pseudo clases una capa de color para esta....
+    */
+}
+
+@media (min-width: 1012px) {
+  .content_banner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1012px) {
+  .content_banner .content_form {
+    width: 600px;
+  }
+}
+
+.content_banner .content_form form {
+  margin: 60px 20px;
+}
+
+.content_banner .content_form form .content_error {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f35454;
+  -webkit-box-shadow: 0 2px 6px 0 #ccc;
+          box-shadow: 0 2px 6px 0 #ccc;
+}
+
+.content_banner .content_form form input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  letter-spacing: 1px;
+  width: 100%;
+  height: 36px;
+  padding: 0 10px 0;
+  margin: 12px 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.content_banner .content_form form input:focus {
+  border-bottom: 1px solid #637bff;
+  -webkit-box-shadow: 0px 15px 20px -15px #637aff9b;
+          box-shadow: 0px 15px 20px -15px #637aff9b;
+}
+
+.content_banner .content_form form button {
+  outline: none;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  letter-spacing: 1.1px;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#abe9fa), to(#c5ceff));
+  background: linear-gradient(180deg, #abe9fa, #c5ceff);
+  width: 100%;
+  margin-top: 36px;
+}
+
+.content_banner .content_form form button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#21c8f6), to(#637bff));
+  background: linear-gradient(180deg, #21c8f6, #637bff);
+}
+
+.content_banner .content_form .conten_icons {
+  text-align: center;
+}
+
+.content_banner .content_form .conten_icons i {
+  color: white;
+  margin: 0 10px;
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 3px 10px #444242;
+          box-shadow: 0 3px 10px #444242;
+  cursor: pointer;
+}
+
+.content_banner .content_form .conten_icons i.fa-github {
+  background-color: #306fc7;
+}
+
+.content_banner .content_form .conten_icons i.fa-envelope {
+  background-color: #519c61;
+}
+
+.content_banner .content_form .conten_icons i.fa-linkedin {
+  background-color: #ee4f5c;
+}
+
+.content_banner .content_form .content_space {
+  width: 100%;
+  height: 40px;
+}
+
+.content_banner .content_form footer {
+  text-align: center;
+  color: #ccc;
+}
+
+.content_banner .content_portada {
+  width: 100%;
+  background-image: url(../../../../assets/img/pets.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1012px) {
+  .content_banner .content_portada:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+/*# sourceMappingURL=form.component.css.map */
